@@ -1,0 +1,30 @@
+# Install packages playbook
+- name: Install necessary packages
+  hosts: db
+  become: yes
+  tasks:
+    - name: Install OpenSSH server
+      apt:
+        name: openssh-server
+        state: present
+        update_cache: yes
+    - name: Install Apache web server
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: Install UFW firewall
+      apt:
+        name: ufw
+        state: present
+        update_cache: yes 
+    - name: Install Git version control
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+    - name: Install Curl command-line tool
+      apt:
+        name: curl
+        state: present
+        update_cache: yes

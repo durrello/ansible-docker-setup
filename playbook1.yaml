@@ -1,0 +1,24 @@
+# ansible playbook1.yaml
+- name: Install and configure web server
+  hosts: web
+  become: yes
+  tasks:
+    - name: Install Apache web server
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+
+    - name: Ensure Apache is running
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Deploy custom index.html
+      copy:
+        dest: /var/www/html/index.html
+        content: "<html><body><h1>Welcome to the Web Server!</h1></body></html>"
+        owner: www-data
+        group: www-data
+        mode: '0644'

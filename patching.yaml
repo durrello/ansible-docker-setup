@@ -1,0 +1,9 @@
+# ansible patching playbook
+- name: Apply security patches to all servers
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update all packages to the latest version
+      apt:
+        upgrade: dist
+        update_cache: yes

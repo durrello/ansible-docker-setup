@@ -1,0 +1,11 @@
+# update ubuntu servers
+- name: Update Ubuntu servers
+  hosts: node
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
