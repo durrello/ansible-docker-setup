@@ -1,3 +1,5 @@
+> **Note:** This repo overlaps with [ansible-masterclass](https://github.com/durrello/ansible-masterclass), which is the cleaner, maintained version (roles, dynamic inventory, docs). This one is kept for history.
+
 # ansible-docker-setup
 
 An Ansible learning environment that uses Docker containers as managed nodes. Spin up SSH-enabled
