@@ -1,0 +1,9 @@
+# Ansible
+*.retry
+.vault_pass
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
